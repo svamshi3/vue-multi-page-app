@@ -8,15 +8,17 @@
   <title>Add Goals</title>
 </head>
 <body>
+  <a href="./../../index.html"> Home page</a>
   <h1>Add Goals</h1>
-  <div class="app">
+  <div id="app" class="app">
     <label for="goal"> Goal</label>
-    <input type="text">
-    <button type="button"> Add Goal</button>
+    <input type="text" id="goal" v-bind:value="enteredValue" v-on:input="handleInput">
+    <button type="button" v-on:click="addGoal"> Add Goal</button>
     <ul>
-    <li> First Goal </li>
+      <li v-for="goal in goalsList"> {{ goal }}</li>
     </ul>
   </div>
+  <script src="https://unpkg.com/vue@next"></script>
   <script src="app.js"></script>
 </body>
 </html>
